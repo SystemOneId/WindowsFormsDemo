@@ -15,8 +15,8 @@ namespace WindowsFormsDemo
 {
     public partial class DataEncryptionUtil : Form
     {
-        private const string _passPhrase = "Rv4Y0FlLcwi15Ho8L9YBDemoflngu3gx0W15eLYgZhjSOBvYsSBbrPppqpyA";
-        private const string _initVector = "eFmgMM7qykTngG2Q";
+        private const string _passPhrase = "Bh7Y0FlLgha15Ho8L9YBDemoflngu3gx0L33nLYgZhjSOBvYsSBbrPppqpyA";
+        private const string _initVector = "KKmgff9qykTngGG1";
         private const string _hashAlgorithm = "SHA1";
         private const int _passwordIterations = 2;
         private const int _keySize = 256;
@@ -30,6 +30,7 @@ namespace WindowsFormsDemo
         {
             var openFileTextFile = new OpenFileDialog();
             openFileTextFile.Filter = "Text Files|*.txt";
+            openFileTextFile.InitialDirectory = Environment.CurrentDirectory;
             openFileTextFile.ShowDialog();
             var fileContents = File.ReadAllText(openFileTextFile.FileName).Split("\r\n".ToCharArray());
             var encryptedData = "";
